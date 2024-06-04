@@ -12,8 +12,14 @@ import path from 'path';
 import { app, BrowserWindow, shell, ipcMain } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
+import express from 'express';
+import cors from 'cors';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
+import mainRoutes from './api/routes';
+import initResponseHelper from './api/middleware';
+
+const expressApp = express();
 
 class AppUpdater {
   constructor() {
@@ -124,9 +130,33 @@ app.on('window-all-closed', () => {
   }
 });
 
+expressApp.use(cors());
+expressApp.use(express.json());
+initResponseHelper(expressApp);
+expressApp.use(mainRoutes);
+
+expressApp.post('/', (req, res) => {
+  try {
+    const { payload } = req.body || {};
+    return res.json({
+      success: true,
+      message: 'Printed Successfully',
+      data: payload,
+    });
+  } catch (error: any) {
+    return res.json({
+      success: false,
+      message: error?.message || 'Unknown Error',
+    });
+  }
+});
+
 app
   .whenReady()
   .then(() => {
+    expressApp.listen(45214, () => {
+      console.log('internal api is ready');
+    });
     createWindow();
     app.on('activate', () => {
       // On macOS it's common to re-create a window in the app when the

@@ -1,0 +1,162 @@
+{
+    "arg": [
+        {
+            "CMD": "ALIGN-CENTER"
+        },
+        {
+            "CMD": "IMAGE-URL",
+            "ARGS": "https://upload.wikimedia.org/wikipedia/commons/9/96/Logo-warga-200x200.png"
+        },
+        {
+            "CMD": "NEWLINE"
+        },
+        {
+            "CMD": "NEWLINE"
+        },
+        {
+            "CMD": "TEXT-LN",
+            "ARGS": "MBOK GALAK JBB"
+        },
+        {
+            "CMD": "TEXT-LN",
+            "ARGS": "Ruko Thamrin Boulevard Blok A-12 Desa/Kelurahan Sertajaa, Kec. Cikarang Timur,"
+        },
+        {
+            "CMD": "TEXT-LN",
+            "ARGS": "Kab. Bekasi, Provinsi Jawa Barat 17533, JAWA BARAT, KABUPATEN BEKASI, CIKARANG TIMUR, 17533"
+        },
+        {
+            "CMD": "TEXT-LN",
+            "ARGS": "0817779688"
+        },
+        {
+            "CMD": "DRAWLINE",
+            "ARGS": "="
+        },
+        {
+            "CMD": "LEFT-RIGHT",
+            "ARGS": [
+                "No Nota :",
+                "CS/78/240513/0002"
+            ]
+        },
+        {
+            "CMD": "LEFT-RIGHT",
+            "ARGS": [
+                "Waktu :",
+                "13 Mei 2024 11:53"
+            ]
+        },
+        {
+            "CMD": "LEFT-RIGHT",
+            "ARGS": [
+                "Order :",
+                "Wulan"
+            ]
+        },
+        {
+            "CMD": "LEFT-RIGHT",
+            "ARGS": [
+                "Kasir :",
+                "Wulan Juga"
+            ]
+        },
+        {
+            "CMD": "DRAWLINE",
+            "ARGS": "-"
+        },
+        {
+            "CMD": "LEFT-RIGHT",
+            "ARGS": [
+                "1 Es Lemon Tea",
+                "8,000"
+            ]
+        },
+        {
+            "CMD": "LEFT-RIGHT",
+            "ARGS": [
+                "1 Es Teh Tawar",
+                "5,000"
+            ]
+        },
+        {
+            "CMD": "LEFT-RIGHT",
+            "ARGS": [
+                "1 Es Teh Manis",
+                "5,000"
+            ]
+        },
+        {
+            "CMD": "LEFT-RIGHT",
+            "ARGS": [
+                "3 Ayam Penyet",
+                "75,000"
+            ]
+        },
+        {
+            "CMD": "ALIGN-LEFT"
+        },
+        {
+            "CMD": "TEXT-LN",
+            "ARGS": "> lamongan"
+        },
+        {
+            "CMD": "DRAWLINE",
+            "ARGS": "-"
+        },
+        {
+            "CMD": "LEFT-RIGHT",
+            "ARGS": [
+                "Subtotal 6 Produk",
+                "93,000"
+            ]
+        },
+        {
+            "CMD": "LEFT-RIGHT",
+            "ARGS": [
+                "Total Tagihan",
+                "93,000"
+            ]
+        },
+        {
+            "CMD": "DRAWLINE",
+            "ARGS": "-"
+        },
+        {
+            "CMD": "LEFT-RIGHT",
+            "ARGS": [
+                "Transfer Bank",
+                "93,000"
+            ]
+        },
+        {
+            "CMD": "TEXT-LN",
+            "ARGS": "QRIS - Bank Central Asia (BCA)"
+        },
+        {
+            "CMD": "LEFT-RIGHT",
+            "ARGS": [
+                "Total Bayar",
+                "93,000"
+            ]
+        },
+        {
+            "CMD": "DRAWLINE",
+            "ARGS": "="
+        },
+        {
+            "CMD": "ALIGN-CENTER"
+        },
+        {
+            "CMD": "TEXT-LN",
+            "ARGS": "Terbayar"
+        },
+        {
+            "CMD": "TEXT-LN",
+            "ARGS": "<--- 21 Mei 2024 12:19 --->"
+        },
+        {
+            "CMD": "CUT"
+        }
+    ]
+}
