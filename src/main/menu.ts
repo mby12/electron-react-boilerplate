@@ -5,6 +5,8 @@ import {
   BrowserWindow,
   MenuItemConstructorOptions,
 } from 'electron';
+import { electronStore } from './electronStore';
+import conf from './glob';
 
 interface DarwinMenuItemConstructorOptions extends MenuItemConstructorOptions {
   selector?: string;
@@ -208,6 +210,18 @@ export default class MenuBuilder {
               this.mainWindow.close();
             },
           },
+          {
+            label: '&Clear Cache',
+            click: () => {
+              electronStore.clear();
+            },
+          },
+          {
+            label: '&Settings',
+            click: () => {
+              conf.mainWindow?.webContents.send('open-settings-modal');
+            },
+          },
         ],
       },
       {
@@ -251,37 +265,6 @@ export default class MenuBuilder {
                   },
                 },
               ],
-      },
-      {
-        label: 'Help',
-        submenu: [
-          {
-            label: 'Learn More',
-            click() {
-              shell.openExternal('https://electronjs.org');
-            },
-          },
-          {
-            label: 'Documentation',
-            click() {
-              shell.openExternal(
-                'https://github.com/electron/electron/tree/main/docs#readme',
-              );
-            },
-          },
-          {
-            label: 'Community Discussions',
-            click() {
-              shell.openExternal('https://www.electronjs.org/community');
-            },
-          },
-          {
-            label: 'Search Issues',
-            click() {
-              shell.openExternal('https://github.com/electron/electron/issues');
-            },
-          },
-        ],
       },
     ];
 

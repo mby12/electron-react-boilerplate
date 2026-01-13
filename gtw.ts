@@ -1,20 +1,24 @@
-/* eslint import/prefer-default-export: off */
-import { URL } from 'url';
-import path from 'path';
-import net from 'net';
-import { Notification, NotificationConstructorOptions } from 'electron';
+// // Define the IP address
+// const ipAddress = '192.168.8.26';
 
-export function resolveHtmlPath(htmlFileName: string) {
-  if (process.env.NODE_ENV === 'development') {
-    const port = process.env.PORT || 1212;
-    const url = new URL(`http://localhost:${port}`);
-    url.pathname = htmlFileName;
-    return url.href;
-  }
-  return `file://${path.resolve(__dirname, '../renderer/', htmlFileName)}`;
-}
+// // Split the IP address into octets
+// const octets = ipAddress.split('.').map((octet) => parseInt(octet));
 
-export function checkPort(ip: string, port: number, timeout = 10000) {
+// // Convert each octet to hexadecimal
+// const hexOctets = octets.map((octet) => {
+//   const hex = octet.toString(16).toUpperCase();
+//   // Pad with leading zero if necessary
+//   return hex.length === 1 ? '0' + hex : hex;
+// });
+
+// // Combine the hexadecimal octets into a single string
+// const hexIpAddress = hexOctets.join('');
+
+// console.log('Hexadecimal IP address:', hexIpAddress);
+
+const net = require('net');
+
+function checkPort(ip: string, port: string, timeout = 10000) {
   return new Promise((resolve, reject) => {
     const socket = new net.Socket();
 
@@ -60,12 +64,15 @@ export function checkPort(ip: string, port: number, timeout = 10000) {
   });
 }
 
-export function isValidIP(ip: string) {
-  const ipPattern =
-    /^(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])$/;
-  return ipPattern.test(ip);
-}
+// Example usage
+const ip = '192.168.8.20';
+const port = '9100';
 
-export function showNotification(arg: NotificationConstructorOptions) {
-  new Notification(arg).show();
-}
+checkPort(ip, port)
+  .then((message) => {
+    console.log(message);
+    return '';
+  })
+  .catch((err) => {
+    console.error(err.message);
+  });
